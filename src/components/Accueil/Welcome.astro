@@ -7,11 +7,12 @@ import bg from "../../assets/bkgrun.png";
 <div
   id="hero-container"
   <!--
+  <!--
   style={`background-image: url(${bg.src}); background-size: cover; background-repeat: no-repeat; background-position: center top;`}
   --
 >
-  >
-  <main id="hero-content" class="d-flex">
+  --> >
+  <main id="hero-content">
     <aside id="hero-liens-contact" aria-label="Liens de contact">
       <LiensContact />
     </aside>
@@ -47,6 +48,7 @@ import bg from "../../assets/bkgrun.png";
 
 <style>
   #hero-container {
+    padding: 6rem;
     display: flex;
     flex-direction: column;
     position: relative;
