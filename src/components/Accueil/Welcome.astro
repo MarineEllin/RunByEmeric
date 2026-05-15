@@ -4,42 +4,37 @@ import Book from "../Book.astro";
 import bg from "../../assets/bkgrun.png";
 ---
 
-<div
-  id="hero-container"
-  style={`background-image: url(${bg.src}); background-size: cover; background-repeat: no-repeat; background-position: center top;`}
->
-  <main id="hero-content" class="d-flex gap2">
-    <aside id="hero-liens-contact" aria-label="Liens de contact">
-      <LiensContact />
-    </aside>
+<div id="hero-container" <main id="hero-content" class="d-flex gap2">
+  <aside id="hero-liens-contact" aria-label="Liens de contact">
+    <LiensContact />
+  </aside>
 
-    <section aria-labelledby="hero-title">
-      <h3 id="hero-title" class="text-color-dark">
-        Accompagnement Running Genève
-      </h3>
+  <section aria-labelledby="hero-title">
+    <h3 id="hero-title" class="text-color-dark">
+      Accompagnement Running Genève
+    </h3>
 
-      <h1 id="hero-name" class="text-color-peps">
-        <span class="text-color-dark">Run</span>
-        <span>By</span>
-        <span class="text-color-dark">Emeric</span>
-      </h1>
+    <h1 id="hero-name" class="text-color-peps">
+      <span class="text-color-dark">Run</span>
+      <span>By</span>
+      <span class="text-color-dark">Emeric</span>
+    </h1>
 
-      <div id="hero-description" class="text-color-dark">
-        <p>
-          Derrière chaque coureur, il y a un objectif, une histoire, un rythme
-          qui lui est propre.
-        </p>
-        <p>
-          Emeric vous accompagne avec l'expérience d'un passionné de terrain,
-          pour progresser à votre façon — concrètement, humainement, et toujours
-          avec plaisir.
-        </p>
-        <p>Ensemble, une foulée à la fois, toujours vers l'avant.</p>
-      </div>
+    <div id="hero-description" class="text-color-dark">
+      <p>
+        Derrière chaque coureur, il y a un objectif, une histoire, un rythme qui
+        lui est propre.
+      </p>
+      <p>
+        Emeric vous accompagne avec l'expérience d'un passionné de terrain, pour
+        progresser à votre façon — concrètement, humainement, et toujours avec
+        plaisir.
+      </p>
+      <p>Ensemble, une foulée à la fois, toujours vers l'avant.</p>
+    </div>
 
-      <Book />
-    </section>
-  </main>
+    <Book />
+  </section>
 </div>
 
 <style>
