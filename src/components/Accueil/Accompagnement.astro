@@ -34,7 +34,7 @@ const accompagnements = [
 
 <section
   id="accompagnement"
-  style={`background-image: url(${bg.src})`}
+  style={`background-image: url('${bg.src}')`}
   aria-labelledby="accompagnement-title"
 >
   <main id="content">
@@ -99,7 +99,7 @@ const accompagnements = [
     align-items: stretch;
     width: 100%;
     gap: 6rem;
-    padding: 6rem;
+    padding: clamp(2rem, 5vw, 6rem);
     position: relative;
     z-index: 1;
   }
