@@ -37,63 +37,56 @@ const accompagnements = [
   id="accompagnement"
   style={`--bg: url(${bg.src})`}
   aria-labelledby="accompagnement-title"
-  class="d-flex-column align-items-center gap6 bkg-dark"
 >
-  <div id="hero">
-    <p id="eyebrow" class="text-color-peps">Coaching Running · Genève</p>
-    <h2 id="accompagnement-title" class="text-color-light">
-      Un accompagnement pensé<br />pour <em class="text-color-peps"
-        >vous faire progresser.</em
-      >
-    </h2>
-    <p id="subtitle" class="text-color-light">
-      Bien plus qu'un simple programme : chaque séance est pensée pour vous,
-      vécue ensemble sur le terrain, puis ajustée avec précision pour garantir
-      une progression constante. Un regard expert, des corrections en temps réel
-      et un suivi attentif — pour transformer chaque effort en vrai progrès,
-      durable et maîtrisé.
-    </p>
-  </div>
+  <main id="content" class="d-flex-column align-items-center gap6 bkg-dark">
+    <div id="hero">
+      <p id="eyebrow" class="text-color-peps">Coaching Running · Genève</p>
+      <h2 id="accompagnement-title" class="text-color-light">
+        Un accompagnement pensé<br />pour <em class="text-color-peps"
+          >vous faire progresser.</em
+        >
+      </h2>
+      <p id="subtitle" class="text-color-light">
+        Bien plus qu'un simple programme : chaque séance est pensée pour vous,
+        vécue ensemble sur le terrain, puis ajustée avec précision pour garantir
+        une progression constante. Un regard expert, des corrections en temps
+        réel et un suivi attentif — pour transformer chaque effort en vrai
+        progrès, durable et maîtrisé.
+      </p>
+    </div>
 
-  <div id="grid">
-    {
-      accompagnements.map((item) => (
-        <article class="card">
-          <div class="accent-bar" aria-hidden="true" />
-          <span class="num text-color-peps" aria-hidden="true">
-            {item.num}
-          </span>
-          <h3 class="card-title text-color-light">{item.title}</h3>
-          {item.text.map((para) => (
-            <p class="card-text text-color-light">{para}</p>
-          ))}
-        </article>
-      ))
-    }
-  </div>
-  <Book id="book" color="light" />
+    <div id="grid">
+      {
+        accompagnements.map((item) => (
+          <article class="card">
+            <div class="accent-bar" aria-hidden="true" />
+            <span class="num text-color-peps" aria-hidden="true">
+              {item.num}
+            </span>
+            <h3 class="card-title text-color-light">{item.title}</h3>
+            {item.text.map((para) => (
+              <p class="card-text text-color-light">{para}</p>
+            ))}
+          </article>
+        ))
+      }
+    </div>
+    <Book id="book" color="light" />
+  </main>
 </section>
 
 <style>
   #accompagnement {
-    padding: 6rem 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  #accompagnement::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
     background-image: var(--bg);
     background-size: cover;
-    background-position: top center;
     background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+  }
 
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 0;
+  #content {
+    padding: 6rem;
+    background-color: rgba(44, 37, 33, 0.8);
   }
 
   /* ── Hero ── */
