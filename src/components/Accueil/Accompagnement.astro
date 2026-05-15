@@ -1,5 +1,6 @@
 ---
 import Book from "../Book.astro";
+import bg from "../../assets/runningnight.jpg";
 
 const accompagnements = [
   {
@@ -34,6 +35,7 @@ const accompagnements = [
 
 <section
   id="accompagnement"
+  style={`--bg: url(${bg.src})`}
   aria-labelledby="accompagnement-title"
   class="d-flex-column align-items-center gap6 bkg-dark"
 >
@@ -77,20 +79,21 @@ const accompagnements = [
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
+  }
 
-    /* subtle noise texture overlay */
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url("/images/runningnight.jpg");
-      background-size: cover;
-      background-position: top center;
-      background-repeat: no-repeat;
-      pointer-events: none;
-      opacity: 0.12;
-      z-index: 0;
-    }
+  #accompagnement::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
   }
 
   /* ── Hero ── */
@@ -101,6 +104,11 @@ const accompagnements = [
     padding: 0rem 6rem 0rem 3rem;
     max-width: 120rem;
     margin: 0 auto;
+  }
+
+  #book {
+    position: relative;
+    z-index: 1;
   }
 
   #eyebrow {
