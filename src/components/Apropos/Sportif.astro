@@ -1,0 +1,101 @@
+---
+import Photos from "../Apropos/Photos.astro";
+import Book from "../Book.astro";
+---
+
+<div id="container">
+  <main
+    id="content"
+    class="d-flex-column align-items-center justify-content-center gap2"
+  >
+    <section id="row" class="d-flex space-evenly align-items-stretch gap6">
+      <!-- BLOC 1 : Photo -->
+      <section
+        id="photo"
+        aria-label="Photo d'Emeric Pujos, accompagnateur running à Genève"
+        class="d-flex justify-content-center"
+      >
+        <Photos />
+      </section>
+
+      <!-- BLOC 2 : Presentation -->
+      <section id="presentation" aria-labelledby="apropos-title">
+        <span class="d-flex-column gap1">
+          <p class="text-color-dark">02 - Et la course à pied ?</p>
+          <h2 id="services-title" class="text-color-peps">Emeric Pujos</h2>
+          <p>
+            Passionné de course à pied depuis l'âge de 6 ans, j'ai commencé
+            l'athlétisme en préférant très tôt les foulées au football.
+          </p>
+          <p>
+            Sous la conduite de mon entraîneur Messaoud Settati, j'ai commencé
+            très sérieusement l'entraînement à partir de 2013 — six à sept
+            séances hebdomadaires, entre footings matinaux, travail de volume le
+            soir, musculation et discipline alimentaire. Une rigueur qui paie
+            rapidement : licencié à Nérac (France), je remporte les championnats
+            départementaux puis régionaux de cross-country, avant de décrocher
+            une 3ème place aux championnats interrégionaux à Limoges (France) en
+            36'08 sur un terrain boueux — mon terrain de prédilection.
+          </p>
+          <p>
+            En mars 2016, à 22 ans, je participe aux championnats de France de
+            cross-country au Mans et intègre le Top 30 espoir — une belle
+            progression après une 68ème place deux ans plus tôt au Pontet
+            (France). Dans la foulée, je m'envole en stage au Maroc pendant
+            trois semaines pour franchir un palier supplémentaire.
+          </p>
+          <p>
+            La même année, je m'essaie au trail lors du Trail d'Espelette,
+            confirmant une passion pour la montagne et les terrains variés. Ce
+            goût pour le dépassement de soi m'a naturellement conduit vers des
+            courses plus engagées : le 10km du Mont-Blanc en 2022, puis l'Ultra
+            Verticale du Môle en 2023, accumulant aujourd'hui plus des centaines
+            de courses à mon actif.
+          </p>
+          <p>
+            Depuis, je n'ai jamais cessé de courir : 10km, trans'Onésienne
+            (00h40m55s, 21ème/301 en 2024), semi-marathon de Genève
+            (01h23min03s, 193ème/6972 en 2025) et bien d'autres courses que je
+            savoure seul ou en famille !
+          </p>
+          <p>
+            Aujourd'hui installé à Genève, c'est naturellement que j'ai souhaité
+            partager cette passion en proposant un accompagnement running adapté
+            à chaque coureur·se.
+          </p>
+        </span>
+      </section>
+    </section>
+    <Book style="margin-top: auto;" />
+  </main>
+</div>
+
+<style>
+  #content {
+    padding: 6rem;
+  }
+
+  #photo {
+    flex: 1;
+    max-width: 900px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  #presentation {
+    flex: 1;
+    max-width: 900px;
+  }
+
+  h2 {
+    margin-top: -0.8rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    #row {
+      flex-direction: column;
+    }
+  }
+</style>

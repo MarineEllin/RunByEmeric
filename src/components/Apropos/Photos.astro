@@ -1,0 +1,73 @@
+---
+import photo1 from "../../assets/photo1.jpg";
+import photo2 from "../../assets/photo2.jpg";
+import photo3 from "../../assets/photo3.jpg";
+import photo4 from "../../assets/photo4.jpg";
+import photo5 from "../../assets/photo5.jpg";
+import photo7 from "../../assets/photo7.jpg";
+
+const photos = [photo1, photo2, photo3, photo4, photo5, photo7];
+---
+
+<section
+  class="slider"
+  aria-label="Photos d'Emeric Pujos, accompagnateur running à Genève"
+>
+  {
+    photos.map((photo, i) => (
+      <img
+        src={photo.src}
+        alt={i === 0 ? "Emeric Pujos, accompagnateur running à Genève" : ""}
+        aria-hidden={i !== 0 ? "true" : undefined}
+        class={`slide border-radius-1 ${i === 0 ? "active" : ""}`}
+        loading="eager"
+      />
+    ))
+  }
+</section>
+
+<script>
+  const slides = document.querySelectorAll(".slider .slide");
+  let current = 0;
+
+  function next() {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }
+
+  setInterval(next, 4000); // pause de 4s par image
+</script>
+
+<style>
+  .slider {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: var(--border-radius-1, 0.5rem);
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%; /* ← ancre l'image en bas */
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .slider {
+      width: 100%;
+      height: 600px;
+    }
+  }
+</style>

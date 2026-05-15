@@ -1,0 +1,97 @@
+---
+import photopresentation from "../../assets/presentation.png";
+import Book from "../Book.astro";
+---
+
+<div id="container">
+  <main
+    id="content"
+    class="d-flex-column align-items-center justify-content-center gap2"
+  >
+    <section id="row">
+      <!-- BLOC 1 : Presentation -->
+      <section id="presentation" aria-labelledby="apropos-title">
+        <span class="d-flex-column gap1">
+          <p class="text-color-dark">01 - Qui je suis ?</p>
+          <h2 id="services-title" class="text-color-peps">Emeric Pujos</h2>
+          <p>
+            À bientôt 32 ans, bien ancré dans la vie, j'habite à Onex, vis en
+            couple et ai la joie d'être le beau-père d'une petite fille de 8
+            ans.
+          </p>
+          <p>
+            Aide-soignant de profession, j'exerce dans le domaine des soins à
+            domicile, un secteur qui me tient particulièrement à cœur.
+            J'apprécie pouvoir représenter un repère fiable et rassurant, tant
+            pour les patient·e·s que pour les professionnel·le·s de santé avec
+            lesquels je coordonne les activités.
+          </p>
+          <p>
+            Mes proches me décrivent souvent comme une personne bienveillante,
+            douce et sur qui l'on peut compter.
+          </p>
+        </span>
+      </section>
+
+      <!-- BLOC 2 : Photo -->
+      <section
+        id="photo"
+        aria-label="Photo d'Emeric Pujos, accompagnateur running à Genève"
+        class="d-flex"
+      >
+        <img
+          src={photopresentation.src}
+          class="border-radius-1"
+          alt="Emeric Pujos, accompagnateur running à Genève"
+          loading="eager"
+        />
+      </section>
+    </section>
+    <Book style="margin-top: auto;" />
+  </main>
+</div>
+
+<style>
+  #content {
+    padding: 6rem;
+  }
+
+  #row {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 6rem;
+    align-items: stretch;
+  }
+
+  #presentation {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  #photo {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+  }
+
+  h2 {
+    margin-top: -0.8rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    #row {
+      flex-direction: column;
+    }
+
+    img {
+      height: 400px;
+    }
+  }
+</style>

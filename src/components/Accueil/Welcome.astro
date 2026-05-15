@@ -1,0 +1,116 @@
+---
+import LiensContact from "../LiensContact.astro";
+import Book from "../Book.astro";
+---
+
+<div id="container">
+  <main id="content" class="d-flex">
+    <section id="liensContact" class="d-flex" aria-label="Liens de contact">
+      <LiensContact />
+    </section>
+
+    <section aria-labelledby="hero-title">
+      <h3 id="hero-title" class="text-color-dark">
+        Accompagnement Running Genève
+      </h3>
+
+      <h1 id="two" class="text-color-peps" aria-label="RunByEmeric">
+        <span class="text-color-dark">Run</span>
+        <span>By</span>
+        <span class="text-color-dark">Emeric</span>
+      </h1>
+
+      <div id="three" class="d-flex-column gapy1 text-color-dark">
+        <p>
+          Derrière chaque coureur, il y a un objectif, une histoire, un rythme
+          qui lui est propre.
+        </p>
+
+        <p>
+          Emeric vous accompagne avec l'expérience d'un passionné de terrain,
+          pour progresser à votre façon — concrètement, humainement, et toujours
+          avec plaisir.
+        </p>
+
+        <p>Ensemble, une foulée à la fois, toujours vers l'avant.</p>
+      </div>
+
+      <Book />
+    </section>
+  </main>
+</div>
+
+<style>
+  #container {
+    min-height: 60vh;
+
+    background-image: url("/images/bkgrun.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    position: relative;
+  }
+
+  #content {
+    padding: 6rem;
+
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  #liensContact {
+    margin-right: 6rem;
+  }
+
+  #hero-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  #two {
+    font-size: 54px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  #three {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    #liensContact {
+      margin-right: 2rem;
+    }
+
+    #content {
+      padding: 4rem 2rem;
+    }
+
+    #hero-title {
+      font-size: 20px;
+      margin-bottom: 1rem;
+    }
+
+    #two {
+      font-size: 36px;
+      margin-bottom: 1rem;
+    }
+
+    #three {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    #liensContact {
+      margin-right: 1rem;
+    }
+
+    #content {
+      padding: 2rem 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,117 @@
+---
+import logo from "../assets/logo.svg";
+import "../styles/global.scss";
+
+const currentPath = Astro.url.pathname;
+const links = [
+  { href: "/", label: "Accueil", aria: "Accueil" },
+  { href: "/Apropos", label: "A propos", aria: "À propos d'Emeric Pujos" },
+  {
+    href: "/Tarifs",
+    label: "Tarifs",
+    aria: "Tarifs de l'accompagnement running",
+  },
+  {
+    href: "/Contact",
+    label: "Contact",
+    aria: "Contact",
+    outline: true,
+  },
+];
+---
+
+<header id="container">
+  <nav
+    class="bkg-light d-flex justify-content-center align-items-center"
+    aria-label="Navigation principale"
+  >
+    <div id="logo" class="d-flex justify-content-center align-items-center">
+      <a href="/" aria-label="RunByEmeric - Retour à l'accueil">
+        <img
+          src={logo.src}
+          width="400"
+          height="120"
+          alt="RunByEmeric - Accompagnement running à Genève"
+          loading="eager"
+        />
+      </a>
+    </div>
+
+    <div
+      id="menu"
+      class="d-flex justify-content-center align-items-center gap2"
+      role="menubar"
+    >
+      {
+        links.map((link) => (
+          <a
+            class={`btn ${link.outline && currentPath !== "/Contact" ? "btn--outline" : ""} ${currentPath === link.href ? "btn--active" : ""}`}
+            href={link.href}
+            aria-label={link.aria}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+
+  <style>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      padding: 2rem;
+      justify-content: space-evenly;
+    }
+
+    #logo {
+      align-items: start;
+    }
+
+    @media screen and (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      #logo img {
+        width: 200px;
+        height: auto;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      #logo img {
+        width: 200px;
+        height: auto;
+      }
+
+      #menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      #logo img {
+        width: 200px;
+        height: auto;
+      }
+    }
+  </style>
+</header>

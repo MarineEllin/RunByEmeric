@@ -1,0 +1,281 @@
+// ─── Palette ───────────────────────────────────────────────
+$peps:   #C8583A;
+$light: #F5EDE3;
+$dark:#2C2521;
+$text:#2C2521;
+$white:  #F5EDE3;
+
+// ─── variables ───────────────────────────────────────────────
+$border-radius : 0.9rem;
+
+// ─── Typographie ───────────────────────────────────────────
+$font-titre: "Playfair Display", serif;
+$font-corps:  "Outfit", sans-serif;
+
+// Échelle typographique
+$fw-light:   300;  // textes secondaires, notes
+$fw-regular: 400;  // corps de texte
+$fw-medium:  500;  // labels, boutons, UI
+$fw-bold:    700;  // titres, display
+// ─── Reset & base ──────────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+
+body {
+  font-family: $font-corps;
+  color: $text;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+img { display: block; max-width: 100%; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+button {
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  border-radius:$border-radius;
+}
+
+h1, h2, h3 {
+  font-family: $font-titre;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+  font-variant: small-caps;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+// ─── Utilitaires ───────────────────────────────────────────
+
+.bkg-light {
+  background-color: $light;
+}
+.bkg-dark {
+  background-color: $dark;
+}
+.bkg-peps {
+  background-color: $peps;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+  line-height: 3rem;
+}
+
+
+.separator {
+  border-bottom: 0.5px solid $light;
+}
+
+
+.bubble {
+  background-color: $light;
+  border: none;
+  border-radius: 100%;
+  padding: 0.8rem;
+  box-shadow: 0 10px 20px $dark, 0 6px 6px $dark;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.04em;
+
+  &:hover {
+    background-color: $peps;
+    color: $light;
+  }
+}
+
+.btn {
+  display: inline-block;
+  border-radius: $border-radius;
+  padding: 0.6rem 2rem;
+  font-family: $font-corps;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+
+  // ❌ ce hover générique écrase tout
+  // &:hover { background: $peps; color: $light; }
+
+  &--outline {
+    box-shadow: inset 0 0 0 2px $peps;
+    &:hover { background: $peps; color: $light; }
+  }
+  &--active {
+    background: $peps;
+    color: $light;
+  }
+  &--light {
+    padding: 0.6rem 2rem;
+    color: $white;
+    background: $light;
+  }
+  &--big {
+    font-size: 16px;
+    border: 2px solid $peps;
+    padding: 1rem 2rem;
+    background: none;
+    font-weight: $fw-bold;
+
+    &--peps { color: $dark; &:hover { background: $peps; color: $light; } }
+    &--light { color: $light; &:hover { background: $peps; color: $dark; } }
+  }
+}
+.px12 {
+  padding: 0 12rem;
+  text-align: center;
+}
+.p2 {
+  padding: 2rem;
+}
+
+.px1 {
+  padding: 0.2rem 1rem;
+}
+
+.p1 {
+  padding: 1rem;
+}
+
+
+.m2 {
+  margin: 2rem;
+}
+
+.m1 {
+  margin: 1rem;
+}
+.m2 {
+  margin: 2rem;
+}
+
+.gap1 {
+  gap: 1rem;
+}
+
+.gap2 {
+  gap: 2rem;
+}
+.gap6 {
+  gap: 6rem;
+}
+
+
+.gapy1{
+  gap: 1rem 0;
+}
+
+.gapy2 {
+  gap: 2rem 0;
+}
+
+.gapx{
+  gap: 0 0.5rem;
+}
+
+.gapx1{
+  gap: 0 1rem;
+}
+
+.gapx2 {
+  gap: 0 2rem;
+}
+
+.justify-content-center {
+  justify-content : center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-end {
+  align-self: flex-end;
+}
+
+.border-radius-1 {
+  border-radius: $border-radius;
+}
+
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-color-peps {
+  color: $peps;
+}
+
+.text-color-dark {
+  color: $dark;
+}
+
+.text-color-light {
+  color: $light;
+}
+
+.hover-peps {
+  transition: all 0.3s ease;
+  &:hover { color: $peps }
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.bloc {
+  border: 2px solid $peps;
+  padding: 2rem;
+  border-radius: $border-radius;
+}

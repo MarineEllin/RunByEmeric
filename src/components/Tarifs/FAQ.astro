@@ -1,0 +1,109 @@
+---
+const faqs = [
+  {
+    question: "Tu coaches quel type de coureurs ?",
+    answer:
+      "Débutants complets ou coureurs qui veulent progresser, peu importe ton niveau. L'important c'est ta motivation, pas ton chrono.",
+  },
+  {
+    question: "On s'entraîne où à Genève ?",
+    answer:
+      "Genève - Rive gauche : Onex et communes limitrophes - On court là où tu te sens à l'aise : bords du Rhône, bord d'Aire, parc des Evaux, Bois de la Bâtie... On définit ensemble le point de rendez-vous. N'hésites pas à me contacter pour les demandes spécifiques.",
+  },
+  {
+    question: "Combien de fois par semaine faut-il courir ?",
+    answer:
+      "Ça dépend de ton objectif et de ton emploi du temps. En général, 2 à 3 sorties par semaine suffisent pour progresser sans se blesser.",
+  },
+  {
+    question: "Est-ce que je dois avoir un objectif de course ?",
+    answer:
+      "Pas obligatoire. Certains veulent finir un 10km, d'autres juste reprendre le sport ou perdre du souffle. On travaille selon ce qui te motive toi.",
+  },
+  {
+    question: "Comment se passe le suivi entre les séances ?",
+    answer:
+      "Via WhatsApp. Tu m'envoies tes retours après chaque sortie et je réponds sous 24h. Pas de suivi robotisé, c'est moi qui lis et qui réponds.",
+  },
+  {
+    question: "Que se passe-t-il si je dois annuler une sortie accompagnée ?",
+    answer:
+      "Préviens-moi au moins 24h à l'avance et on reprogramme sans souci. En dessous de 24h, la séance est due.",
+  },
+  {
+    question: "Est-ce que tu proposes des séances en ligne ?",
+    answer:
+      "Le programme et le suivi WhatsApp sont 100% à distance. Les sorties accompagnées se font en présentiel à Genève.",
+  },
+  {
+    question: "Et si je débute totalement, que je n'ai même pas de baskets ?",
+    answer:
+      "Le 1er échange WhatsApp sert aussi à ça ! Nous pouvons tout à fait dédier une séance privée à ces aspects pratiques : achat des chaussures, des vêtements de running...",
+  },
+  {
+    question: "Et si je n'arrive pas à courir plus de 2 minutes",
+    answer:
+      "Qui a dit que course à pied signifiait courrir du début à la fin ? Au début, on peut alterner course et marche : ce sera d'autant satisfaisant de mesurer les progrès sur le long terme.",
+  },
+  {
+    question:
+      "Quelle est la durée de validité des programmes et séances privatives",
+    answer:
+      "La durée affichée sur chaque programme représente la durée de validité du programme  à partir de la mise à disposition du programme running. Pour les séances privatives, la durée affichée représente la durée de validité à partir de la 1ère séance. ",
+  },
+];
+---
+
+<div id="container">
+  <main id="content" class="d-flex-column">
+    <!-- BLOC 1 : FAQ -->
+    <section aria-labelledby="services-title" class="d-flex-column gap2">
+      <h2 id="conditions-title" class="text-color-peps">FAQ</h2>
+      <section class="faq d-flex-column gap1">
+        {
+          faqs.map((item) => (
+            <details>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))
+        }
+      </section>
+    </section>
+  </main>
+</div>
+
+<script>
+  const allDetails = document.querySelectorAll("details");
+
+  allDetails.forEach((el) => {
+    el.addEventListener("toggle", () => {
+      if (el.open) {
+        allDetails.forEach((other) => {
+          if (other !== el) other.open = false;
+        });
+      }
+    });
+  });
+</script>
+
+<style>
+  #content {
+    padding: 6rem;
+  }
+
+  #conditions {
+    font-size: 12px;
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    #container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>

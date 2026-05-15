@@ -1,0 +1,15 @@
+---
+const { color = "peps" } = Astro.props;
+---
+
+<div>
+  <a
+    href="https://wa.me/41783335547?text=Bonjour%20Emeric%2C%20je%20souhaite%20réserver%20une%20séance"
+    target="_blank"
+    rel="noopener"
+  >
+    <button class={`btn btn--big btn--big--${color}`}
+      >Réserver une séance</button
+    >
+  </a>
+</div>

@@ -1,0 +1,240 @@
+---
+import Book from "../Book.astro";
+
+const accompagnements = [
+  {
+    num: "01",
+    title: "Plan sur mesure",
+    text: [
+      "Chaque coureur est unique — son niveau, ses disponibilités, ses objectifs, ses contraintes du quotidien. Il n'existe pas de programme universel qui fonctionne pour tout le monde.",
+      "Fréquence des sorties, intensité, récupération, progression semaine après semaine : chaque détail est pensé pour que vous avanciez de façon durable, sans vous blesser.",
+      "Que vous souhaitiez courir votre premier 5 km, terminer un semi-marathon ou simplement reprendre le sport — le programme s'adapte à là où vous en êtes, et évolue avec vous.",
+    ],
+  },
+  {
+    num: "02",
+    title: "Sorties accompagnées",
+    text: [
+      "Courir ensemble, c'est bien plus qu'un entraînement partagé. C'est l'occasion de travailler sa foulée en temps réel, d'ajuster son allure — avec un regard extérieur qui voit ce que l'on ne perçoit pas soi-même.",
+      "Sur le terrain, les conseils prennent tout leur sens. On corrige, on encourage, on expérimente. Chaque sortie devient un moment d'apprentissage concret, loin des théories abstraites.",
+      "Et puis courir accompagné, c'est aussi ne plus jamais avoir à trouver seul la motivation de chausser ses baskets par un lundi soir pluvieux.",
+    ],
+  },
+  {
+    num: "03",
+    title: "Suivi & ajustements",
+    text: [
+      "La progression ne se fait jamais en ligne droite. Il y a des semaines de forme, des semaines difficiles, des imprévus, des petites douleurs. C'est normal — et c'est précisément là qu'un suivi régulier fait la différence.",
+      "Après chaque sortie accompagnée, on analyse ce qui s'est passé : les sensations, les données, les signaux du corps. Le programme est ajusté en conséquence — sans attendre que la situation se dégrade.",
+      "Semaine après semaine, ce regard extérieur bienveillant vous permet de rester sur la bonne trajectoire, et de progresser avec confiance — quoi qu'il arrive.",
+    ],
+  },
+];
+---
+
+<section
+  id="accompagnement"
+  aria-labelledby="accompagnement-title"
+  class="d-flex-column align-items-center gap6 bkg-dark"
+>
+  <div id="hero">
+    <p id="eyebrow" class="text-color-peps">Coaching Running · Genève</p>
+    <h2 id="accompagnement-title" class="text-color-light">
+      Un accompagnement pensé<br />pour <em class="text-color-peps"
+        >vous faire progresser.</em
+      >
+    </h2>
+    <p id="subtitle" class="text-color-light">
+      Bien plus qu'un simple programme : chaque séance est pensée pour vous,
+      vécue ensemble sur le terrain, puis ajustée avec précision pour garantir
+      une progression constante. Un regard expert, des corrections en temps réel
+      et un suivi attentif — pour transformer chaque effort en vrai progrès,
+      durable et maîtrisé.
+    </p>
+  </div>
+
+  <div id="grid">
+    {
+      accompagnements.map((item) => (
+        <article class="card">
+          <div class="accent-bar" aria-hidden="true" />
+          <span class="num text-color-peps" aria-hidden="true">
+            {item.num}
+          </span>
+          <h3 class="card-title text-color-light">{item.title}</h3>
+          {item.text.map((para) => (
+            <p class="card-text text-color-light">{para}</p>
+          ))}
+        </article>
+      ))
+    }
+  </div>
+  <Book id="book" color="light" />
+</section>
+
+<style>
+  #accompagnement {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+
+    /* subtle noise texture overlay */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("/images/runningnight.jpg");
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      opacity: 0.12;
+      z-index: 0;
+    }
+  }
+
+  /* ── Hero ── */
+  #hero {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 0rem 6rem 0rem 3rem;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  #eyebrow {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+    font-weight: 400;
+  }
+
+  #accompagnement-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 1.5rem;
+    max-width: 640px;
+  }
+
+  #accompagnement-title em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  #subtitle {
+    line-height: 1.8;
+    max-width: 660px;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  /* ── Grid ── */
+  #grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  .card {
+    padding: 2.5rem 3rem;
+    border-right: 0.5px solid rgba(255, 255, 255, 0.07);
+    border-top: 0.5px solid rgba(255, 255, 255, 0.07);
+    position: relative;
+    transition: background 0.3s ease;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    &:hover .accent-bar {
+      opacity: 1;
+    }
+  }
+
+  .accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #c8583a 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .num {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    user-select: none;
+    opacity: 0.7;
+  }
+
+  .card-title {
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+  }
+
+  .card-text {
+    line-height: 1.85;
+    margin: 0 0 1rem;
+    font-weight: 300;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* ── Responsive ── */
+  @media screen and (max-width: 900px) {
+    #hero {
+      padding: 3.5rem 2rem 2.5rem;
+    }
+
+    #grid {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      border-right: none;
+      padding: 2rem 2rem;
+    }
+
+    #section-footer {
+      padding: 1.5rem 2rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    #hero {
+      padding: 2.5rem 1.25rem 2rem;
+    }
+
+    .card {
+      padding: 1.75rem 1.25rem;
+    }
+
+    #section-footer {
+      padding: 1.25rem 1.25rem;
+    }
+  }
+</style>

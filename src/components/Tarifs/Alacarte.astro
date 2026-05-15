@@ -1,0 +1,118 @@
+---
+import Book from "../Book.astro";
+
+const background = ["bkg-light", "bkg-peps", "bkg-light"];
+
+const tarifs = [
+  {
+    duration: "1 mois",
+    title: "1 sortie",
+    text: "Lance-toi avec un programme structuré et un accompagnement concret dès la première semaine.",
+    price: "69",
+    nb: "1",
+  },
+  {
+    duration: "2 mois",
+    title: "3 sorties",
+    text: "Progresse avec un suivi qui s'adapte à toi et à tes résultats.",
+    price: "199",
+    nb: "3",
+  },
+  {
+    duration: "3 mois",
+    title: "5 sorties",
+    text: "Vise un objectif précis et mets toutes les chances de ton côté sur la durée.",
+    price: "329",
+    nb:"5",
+  },
+];
+---
+
+<div id="container">
+  <main id="content" class="d-flex-column bkg-dark">
+    <!-- BLOC 1 : A la carte-->
+    <section
+      aria-labelledby="Alacarte-title"
+      class="d-flex-column align-items-center gap2"
+    >
+      <h1 id="tarifs-title" class="text-color-peps">Séances privées supplémentaires</h1>
+      <span id="blocs" class="d-flex gap2 text-color-light">
+        {
+          tarifs.map((item, index) => (
+            <article id="article" class="d-flex-column bloc gap2">
+              <p
+                id="duration"
+                class={`px1 border-radius-1 ${background[index]} text-color-dark`}
+              >
+                {item.duration}
+              </p>
+              <h2>{item.title}</h2>
+              <p id="text">{item.text}</p>
+              <section class="d-flex gapx">
+                <h2>{item.price}</h2>
+                <p>CHF</p>
+              </section>
+              <hr class="separator" />
+              <section>
+                <section>
+                <ul>
+                  <li>Séance à la carte pour 1 à 2 personnes</li>
+                  <li>{item.nb} entraînements privatifs accompagnés</li>
+                  <li>Exercices personnalisé</li>
+                  <li>Supervision et correction des mouvements</li>
+                </ul>
+              </section>
+              </section>
+            </article>
+          ))
+        }
+      </span>
+      <Book color = "light" style="margin-top: auto;" />
+    </section>
+  </main>
+</div>
+
+<style>
+  #content {
+    padding: 6rem;
+  }
+
+  #article {
+    width: 420px;
+  }
+
+  #duration {
+    margin-bottom: 2rem;
+    font-size: 12px;
+    max-width: fit-content;
+  }
+
+  #text {
+    height: 80px;
+  }
+
+  h2 {
+    margin-top: -0.8rem;
+  }
+
+  li {
+    margin: 0 2rem;
+    list-style: circle;
+  }
+
+  @media screen and (max-width: 1400px) {
+    #blocs {
+      display: flex;
+      flex-direction: column;
+    }
+
+     @media screen and (max-width: 480px) {
+    #blocs {
+      display: flex;
+      flex-direction: column;
+    }
+     #article {
+      width: 330px;
+  }
+  }
+</style>

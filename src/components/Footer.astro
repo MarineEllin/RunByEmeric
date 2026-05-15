@@ -1,0 +1,99 @@
+---
+import logo from "../assets/logo.svg";
+---
+
+<footer id="container" class="bkg-dark">
+  <div class="d-flex space-evenly">
+    <!-- Logo & baseline -->
+    <section
+      id="links"
+      class="d-flex-column bkg-light border-radius-1 m2 p2"
+      aria-label="RunByEmeric"
+    >
+      <a href="/" aria-label="RunByEmeric - Retour à l'accueil">
+        <img
+          src={logo.src}
+          width="300"
+          height="60"
+          alt="RunByEmeric - Accompagnement running Genève"
+          loading="lazy"
+        />
+      </a>
+      <address
+        class="d-flex-column justify-content-center align-items-center"
+        style="font-style: normal;"
+      >
+        <p>Ensemble</p>
+        <p>Une foulée à la fois</p>
+        <p>Toujours vers l'avant</p>
+      </address>
+    </section>
+
+    <!-- Navigation -->
+    <nav
+      id="navigation"
+      class="d-flex-column text-color-light m2"
+      aria-label="Liens du footer"
+    >
+      <h2>Navigation</h2>
+      <ul class="d-flex-column" style="list-style: none">
+        <li><a href="/" class="hover-peps">Accueil</a></li>
+        <li><a href="/Apropos" class="hover-peps">A propos</a></li>
+        <li>
+          <a href="/Tarifs" class="hover-peps">Tarifs accompagnement running</a>
+        </li>
+        <li><a href="/Contact" class="hover-peps">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contact -->
+    <section
+      id="contact"
+      class="d-flex-column align-items-center m1 text-color-light m2"
+      aria-label="Coordonnées"
+    >
+      <h2>Contact</h2>
+      <address style="font-style: normal;">
+        <p>
+          <a
+            href="mailto:runbyemeric@gmail.com"
+            aria-label="Envoyer un email à RunByEmeric"
+            class="hover-peps"
+          >
+            runbyemeric@gmail.com
+          </a>
+        </p>
+        <p>
+          <a
+            href="tel:+41783335547"
+            aria-label="Appeler Emeric Pujos"
+            class="hover-peps"
+          >
+            +41 78 333 55 47
+          </a>
+        </p>
+      </address>
+    </section>
+  </div>
+
+  <p
+    style="text-align: center; font-size: 12px; padding: 1rem; opacity: 0.5;"
+    class="text-color-light"
+  >
+    © {new Date().getFullYear()} RunByEmeric · Accompagnement running Genève · Tous
+    droits réservés
+  </p>
+
+  <style>
+    #navigation,
+    #contact {
+      height: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+      #container > div {
+        flex-direction: column;
+      }
+    }
+  </style>
+</footer>

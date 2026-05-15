@@ -1,0 +1,99 @@
+---
+import photo from "../../assets/semisepia.jpg";
+import Book from "../Book.astro";
+---
+
+<div id="container">
+  <main id="content" class="d-flex space-evenly">
+    <!-- BLOC 1 : Services -->
+    <section aria-labelledby="services-title">
+      <span class="d-flex-column gap1">
+        <p class="text-color-dark">01 - Accompagnement</p>
+        <h2 id="services-title" class="text-color-peps">
+          Accompagnement running à Genève
+        </h2>
+        <p>
+          Un suivi personnalisé pour courir mieux, plus loin, et avec plaisir —
+          que vous débutiez ou que vous visiez votre premier marathon.
+        </p>
+        <ul>
+          <li>Bilan initial et définition des objectifs</li>
+          <hr class="separator" />
+          <li>Plan d'entraînement sur mesure</li>
+          <hr class="separator" />
+          <li>Suivi hebdomadaire</li>
+          <hr class="separator" />
+          <li>Sorties accompagnées</li>
+        </ul>
+      </span>
+    </section>
+
+    <!-- BLOC 2 : Photo -->
+    <section aria-label="Photo d'Emeric Pujos, accompagnateur running à Genève">
+      <img
+        src={photo.src}
+        class="border-radius-1"
+        alt="Emeric Pujos, accompagnateur running à Genève"
+        width="350"
+        height="auto"
+        loading="eager"
+      />
+    </section>
+
+    <!-- BLOC 3 : Profil -->
+    <section aria-labelledby="profil-title">
+      <span class="d-flex-column gap1" style="height: 100%;">
+        <p class="text-color-dark">02 - Profil</p>
+        <h2 id="profil-title" class="text-color-peps">Emeric Pujos</h2>
+        <p><strong>Accompagnateur running à Genève</strong></p>
+        <p>
+          Passionné de course à pied depuis l'âge de 6 ans, je me suis très tôt
+          spécialisé dans le cross et la course sur route. Les entraînements,
+          les compétitions et les victoires m'ont forgé une expérience de
+          terrain solide et un vrai mental de compétiteur.
+        </p>
+        <p>
+          Travaillant dans le domaine du social, j'accorde une grande importance
+          à l'écoute, la bienveillance et au contact humain.
+        </p>
+        <p>
+          Mon objectif : partager mon expérience avec tous, du débutant au
+          coureur confirmé. Sans discours compliqué, juste des conseils
+          concrets, du soutien et une passion communicative pour vous aider à
+          relever vos défis.
+        </p>
+        <Book style="margin-top: auto;" />
+      </span>
+    </section>
+  </main>
+
+  <style>
+    #container {
+      height: auto;
+    }
+    #content {
+      padding: 6rem;
+    }
+
+    section {
+      max-width: 500px;
+      padding: 2rem;
+    }
+
+    img {
+      max-width: 350px;
+      height: auto;
+    }
+
+    h2 {
+      margin-top: -0.8rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      #container {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
+</div>
