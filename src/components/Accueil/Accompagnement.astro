@@ -1,5 +1,4 @@
 ---
-import Book from "../Book.astro";
 import bg from "../../assets/runningnight.jpg";
 
 const accompagnements = [
@@ -35,11 +34,10 @@ const accompagnements = [
 
 <section
   id="accompagnement"
-  style={`--bg: url(${bg.src})`}
+  style={`background-image: url(${bg.src})`}
   aria-labelledby="accompagnement-title"
-  class="d-flex-column align-items-center gap6 bkg-dark"
 >
-  <main id="content" class="d-flex-column align-items-center gap6 bkg-dark">
+  <main id="content">
     <div id="hero">
       <p id="eyebrow" class="text-color-peps">Coaching Running · Genève</p>
       <h2 id="accompagnement-title" class="text-color-light">
@@ -72,21 +70,36 @@ const accompagnements = [
         ))
       }
     </div>
-    <Book id="book" color="light" />
   </main>
 </section>
 
 <style>
   #accompagnement {
-    background-image: var(--bg);
+    display: flex;
+    flex-direction: column;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
     position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  #accompagnement::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
   }
 
   #content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
     padding: 6rem;
+    flex: 1;
   }
 
   /* ── Hero ── */
@@ -148,18 +161,18 @@ const accompagnements = [
     border-top: 0.5px solid rgba(255, 255, 255, 0.07);
     position: relative;
     transition: background 0.3s ease;
+  }
 
-    &:last-child {
-      border-right: none;
-    }
+  .card:last-child {
+    border-right: none;
+  }
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.025);
-    }
+  .card:hover {
+    background: rgba(255, 255, 255, 0.025);
+  }
 
-    &:hover .accent-bar {
-      opacity: 1;
-    }
+  .card:hover .accent-bar {
+    opacity: 1;
   }
 
   .accent-bar {
@@ -196,10 +209,9 @@ const accompagnements = [
     line-height: 1.85;
     margin: 0 0 1rem;
     font-weight: 300;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+  }
+  .card:last-child {
+    margin-bottom: 0;
   }
 
   /* ── Responsive ── */
@@ -216,13 +228,6 @@ const accompagnements = [
       border-right: none;
       padding: 2rem 2rem;
     }
-
-    #section-footer {
-      padding: 1.5rem 2rem;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.25rem;
-    }
   }
 
   @media screen and (max-width: 480px) {
@@ -232,10 +237,6 @@ const accompagnements = [
 
     .card {
       padding: 1.75rem 1.25rem;
-    }
-
-    #section-footer {
-      padding: 1.25rem 1.25rem;
     }
   }
 </style>
