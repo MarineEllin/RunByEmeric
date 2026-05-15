@@ -8,7 +8,7 @@ import bg from "../../assets/bkgrun.png";
   id="hero-container"
   style={`background-image: url(${bg.src}); background-size: cover; background-repeat: no-repeat; background-position: center top;`}
 >
-  <main id="hero-content" class="d-flex gap2">
+  <main id="hero-content">
     <aside id="hero-liens-contact" aria-label="Liens de contact">
       <LiensContact />
     </aside>
@@ -43,25 +43,33 @@ import bg from "../../assets/bkgrun.png";
 </div>
 
 <style>
+  /* ===== HERO WRAPPER ===== */
   #hero-container {
     width: 100%;
     height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
   }
 
+  /* ===== MAIN LAYOUT (FIX 40/60) ===== */
   #hero-content {
-    display: flex;
-    gap: 6rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 3rem;
     padding: 6rem;
     background-color: rgba(245, 237, 227, 0.75);
     height: 100%;
-    align-items: flex-start;
+    align-items: start;
   }
 
+  /* ===== LEFT COLUMN ===== */
   #hero-liens-contact {
-    flex: 0 0 40%;
-    margin-right: 6rem;
+    display: flex;
+    flex-direction: column;
   }
 
+  /* ===== TYPO ===== */
   #hero-title {
     font-size: 24px;
     font-weight: 700;
@@ -83,30 +91,30 @@ import bg from "../../assets/bkgrun.png";
     margin-bottom: 2rem;
   }
 
+  /* ===== RESPONSIVE ===== */
   @media screen and (max-width: 768px) {
-    #hero-liens-contact {
-      margin-right: 2rem;
-    }
     #hero-content {
+      grid-template-columns: 1fr;
       padding: 4rem 2rem;
+      gap: 2rem;
     }
+
     #hero-title {
       font-size: 20px;
       margin-bottom: 1rem;
     }
+
     #hero-name {
       font-size: 36px;
       margin-bottom: 1rem;
     }
+
     #hero-description {
       font-size: 16px;
     }
   }
 
   @media screen and (max-width: 480px) {
-    #hero-liens-contact {
-      margin-right: 1rem;
-    }
     #hero-content {
       padding: 2rem 1rem;
     }
