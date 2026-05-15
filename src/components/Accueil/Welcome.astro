@@ -4,9 +4,13 @@ import Book from "../Book.astro";
 import bg from "../../assets/bkgrun.png";
 ---
 
-<div id="container" style={`background-image: url(${bg.src})`}>
-  <main id="content" class="d-flex">
-    <section id="liensContact" class="d-flex" aria-label="Liens de contact">
+<div id="hero-container" style={`--hero-bg: url(${bg.src})`}>
+  <main id="hero-content" class="d-flex">
+    <section
+      id="hero-liens-contact"
+      class="d-flex"
+      aria-label="Liens de contact"
+    >
       <LiensContact />
     </section>
 
@@ -15,13 +19,13 @@ import bg from "../../assets/bkgrun.png";
         Accompagnement Running Genève
       </h3>
 
-      <h1 id="two" class="text-color-peps" aria-label="RunByEmeric">
+      <h1 id="hero-name" class="text-color-peps">
         <span class="text-color-dark">Run</span>
         <span>By</span>
         <span class="text-color-dark">Emeric</span>
       </h1>
 
-      <div id="three" class="d-flex-column gapy1 text-color-dark">
+      <div id="hero-description" class="text-color-dark">
         <p>
           Derrière chaque coureur, il y a un objectif, une histoire, un rythme
           qui lui est propre.
@@ -39,75 +43,83 @@ import bg from "../../assets/bkgrun.png";
       <Book />
     </section>
   </main>
+</div>
 
-  <style>
-    #container {
-      background-image: var(--bg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center top;
-      position: relative;
+<style>
+  #hero-container {
+    background-image: var(--hero-bg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+  }
+
+  #hero-content {
+    padding: 6rem;
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  #hero-liens-contact {
+    margin-right: 6rem;
+    flex-shrink: 0;
+  }
+
+  #hero-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  #hero-name {
+    font-size: 54px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  #hero-description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  #hero-description p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    #hero-liens-contact {
+      margin-right: 2rem;
     }
 
-    #content {
-      padding: 6rem;
-      background-color: rgba(255, 255, 255, 0.75);
-    }
-
-    #liensContact {
-      margin-right: 6rem;
+    #hero-content {
+      padding: 4rem 2rem;
     }
 
     #hero-title {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 2rem;
-    }
-
-    #two {
-      font-size: 54px;
-      font-weight: 700;
-      margin-bottom: 2rem;
-    }
-
-    #three {
       font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
-    @media screen and (max-width: 768px) {
-      #liensContact {
-        margin-right: 2rem;
-      }
-
-      #content {
-        padding: 4rem 2rem;
-      }
-
-      #hero-title {
-        font-size: 20px;
-        margin-bottom: 1rem;
-      }
-
-      #two {
-        font-size: 36px;
-        margin-bottom: 1rem;
-      }
-
-      #three {
-        font-size: 16px;
-      }
+    #hero-name {
+      font-size: 36px;
+      margin-bottom: 1rem;
     }
 
-    @media screen and (max-width: 480px) {
-      #liensContact {
-        margin-right: 1rem;
-      }
-
-      #content {
-        padding: 2rem 1rem;
-      }
+    #hero-description {
+      font-size: 16px;
     }
-  </style>
-</div>
+  }
+
+  @media screen and (max-width: 480px) {
+    #hero-liens-contact {
+      margin-right: 1rem;
+    }
+
+    #hero-content {
+      padding: 2rem 1rem;
+    }
+  }
+</style>
