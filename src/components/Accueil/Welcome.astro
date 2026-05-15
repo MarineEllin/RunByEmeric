@@ -8,7 +8,7 @@ import bg from "../../assets/bkgrun.png";
   id="hero-container"
   style={`background-image: url(${bg.src}); background-size: cover; background-repeat: no-repeat; background-position: center top;`}
 >
-  <main id="hero-content" class="d-flex gap2">
+  <main id="hero-content">
     <aside id="hero-liens-contact" aria-label="Liens de contact">
       <LiensContact />
     </aside>
@@ -44,15 +44,16 @@ import bg from "../../assets/bkgrun.png";
 
 <style>
   #hero-container {
+    display: flex;
     min-height: 100vh;
   }
 
   #hero-content {
-    display: flex;
-    gap: 6rem;
     padding: 6rem;
+    display: flex;
+    gap: 2rem;
     background-color: rgba(245, 237, 227, 0.75);
-    height: 600px;
+    flex: 1;
     align-items: flex-start;
   }
 
