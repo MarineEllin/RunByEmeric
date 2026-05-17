@@ -1,19 +1,21 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import DetailTarifs from "../components/Tarifs/DetailTarifs.astro";
-import Alacarte from "../components/Tarifs/Alacarte.astro";
-import FAQ from "../components/Tarifs/FAQ.astro";
+import Welcome from "../components/Accueil/Welcome.astro";
+import Services from "../components/Accueil/Services.astro";
+import Accompagnement from "../components/Accueil/Accompagnement.astro";
+import Pourqui from "../components/Accueil/Pourqui.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
   title="Accueil - Emeric Pujos | RunByEmeric Genève"
-  description="Découvrez les services d'accompagnement running proposés par Emerci Pujos sur Genève."
+  description="Découvrez les services d'accompagnement running proposés par Emeric Pujos sur Genève."
 >
   <Header />
-  <DetailTarifs />
-  <Alacarte />
-  <FAQ />
+  <Welcome />
+  <Services />
+  <Accompagnement />
+  <Pourqui />
   <Footer />
 </Layout>
