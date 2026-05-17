@@ -57,7 +57,7 @@ const canonicalURL = new URL(
   </body>
 </html>
 
-<style>
+<style is:global>
   html,
   body {
     margin: 0;
@@ -65,5 +65,11 @@ const canonicalURL = new URL(
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
   }
 </style>

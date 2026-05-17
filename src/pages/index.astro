@@ -1,5 +1,10 @@
 ---
-import Accueil from "./Accueil.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Welcome from "../components/Accueil/Welcome.astro";
+import Services from "../components/Accueil/Services.astro";
+import Accompagnement from "../components/Accueil/Accompagnement.astro";
+import Pourqui from "../components/Accueil/Pourqui.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -7,5 +12,10 @@ import Layout from "../layouts/Layout.astro";
   title="Accueil - Emeric Pujos | RunByEmeric Genève"
   description="Découvrez les services d'accompagnement running proposés par Emeric Pujos sur Genève."
 >
-  <Accueil />
+  <Header />
+  <Welcome />
+  <Services />
+  <Accompagnement />
+  <Pourqui />
+  <Footer />
 </Layout>
