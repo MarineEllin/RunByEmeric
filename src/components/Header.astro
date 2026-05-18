@@ -100,7 +100,7 @@ const links = [
       {
         links.map((link) => (
           <a
-            class={`mobile-link ${link.outline && currentPath !== "/Contact" ? "btn--outline" : ""} ${currentPath === link.href ? "btn--active" : ""}`}
+            class={`mobile-link ${currentPath === link.href ? "active-link" : ""}`}
             href={link.href}
             aria-label={link.aria}
           >
