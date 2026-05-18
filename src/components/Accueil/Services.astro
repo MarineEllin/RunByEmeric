@@ -3,33 +3,51 @@ import photo from "../../assets/semisepia.jpg";
 import Book from "../Book.astro";
 ---
 
-<div id="container">
+<div id="container" class="d-flex-column">
   <main id="content" class="d-flex space-evenly">
     <!-- BLOC 1 : Services -->
-    <section aria-labelledby="services-title">
-      <span class="d-flex-column gap1">
-        <p class="text-color-dark">01 - Accompagnement</p>
-        <h2 id="services-title" class="text-color-peps">
+    <section aria-labelledby="services-title" class="d-flex-column gap2">
+      <span>
+        <p id="num" class="num text-color-dark">01</p>
+        <p id="title" class="card-title text-color-peps">
           Accompagnement running à Genève
-        </h2>
-        <p>
-          Un suivi personnalisé pour courir mieux, plus loin, et avec plaisir —
-          que vous débutiez ou que vous visiez votre premier marathon.
         </p>
+      </span>
+      <span>
+        Un suivi personnalisé pour progresser efficacement, améliorer votre
+        endurance et prendre du plaisir à chaque sortie que vous prépariez vos
+        premiers kilomètres ou un objectif comme un semi-marathon ou un
+        marathon.
+      </span>
+      <span>
         <ul>
           <li>Bilan initial et définition des objectifs</li>
           <hr class="separator" />
-          <li>Plan d'entraînement sur mesure</li>
+          <li>Plan d'entraînement personnalisé et évolutif</li>
           <hr class="separator" />
-          <li>Suivi hebdomadaire</li>
+          <li>Suivi hebdomadaire et ajustements réguliers</li>
           <hr class="separator" />
-          <li>Sorties accompagnées</li>
+          <li>Séances adaptées : endurance, fractionné, seuil, etc.</li>
+          <hr class="separator" />
+          <li>
+            Conseils récupération, gestion de l’effort et prévention des
+            blessures
+          </li>
+          <hr class="separator" />
+          <li>Sorties accompagnées et travail technique</li>
         </ul>
+      </span>
+      <span>
+        <p>
+          Parce que la course à pied ne se résume pas uniquement à la
+          performance : courir, c’est aussi se vider la tête, retrouver de
+          l’énergie et prendre du plaisir à chaque kilomètre.
+        </p>
       </span>
     </section>
 
     <!-- BLOC 2 : Photo -->
-    <section aria-label="Photo d'Emeric Pujos, accompagnateur running à Genève">
+    <div aria-label="Photo d'Emeric Pujos, accompagnateur running à Genève">
       <img
         src={photo.src}
         class="border-radius-1"
@@ -38,62 +56,83 @@ import Book from "../Book.astro";
         height="auto"
         loading="eager"
       />
-    </section>
+    </div>
 
     <!-- BLOC 3 : Profil -->
     <section aria-labelledby="profil-title">
-      <span class="d-flex-column gap1" style="height: 100%;">
-        <p class="text-color-dark">02 - Profil</p>
-        <h2 id="profil-title" class="text-color-peps">Emeric Pujos</h2>
-        <p><strong>Accompagnateur running à Genève</strong></p>
+      <span class="d-flex-column flex1 gap1 space-evenly">
+        <span>
+          <p id="num" class="num text-color-dark">02</p>
+          <p id="title" class="card-title text-color-peps">Emeric Pujos</p>
+        </span>
+
+        <span>
+          <p class="italic-eyebrow">Passion</p>
+          Passionné de course à pied depuis l'âge de 6 ans, je me suis très tôt spécialisé
+          dans le cross et la course sur route. Les entraînements, les compétitions
+          et les victoires m'ont forgé une expérience de terrain solide et un vrai
+          mental de compétiteur.
+        </span>
         <p>
-          Passionné de course à pied depuis l'âge de 6 ans, je me suis très tôt
-          spécialisé dans le cross et la course sur route. Les entraînements,
-          les compétitions et les victoires m'ont forgé une expérience de
-          terrain solide et un vrai mental de compétiteur.
+          <p class="italic-eyebrow">Approche humaine</p>
+          Travaillant dans le domaine du social, j'accorde une grande importance à
+          l'écoute, la bienveillance et au contact humain.
         </p>
         <p>
-          Travaillant dans le domaine du social, j'accorde une grande importance
-          à l'écoute, la bienveillance et au contact humain.
+          <p class="italic-eyebrow">Mission</p>
+          Mon objectif : partager mon expérience avec tous, du débutant au coureur
+          confirmé. Sans discours compliqué, juste des conseils concrets, du soutien
+          et une passion communicative pour vous aider à relever vos défis.
         </p>
-        <p>
-          Mon objectif : partager mon expérience avec tous, du débutant au
-          coureur confirmé. Sans discours compliqué, juste des conseils
-          concrets, du soutien et une passion communicative pour vous aider à
-          relever vos défis.
-        </p>
-        <Book style="margin-top: auto;" />
       </span>
     </section>
   </main>
 
-  <style>
-    #container {
-      min-height: 100vh;
-    }
-    #content {
-      padding: 6rem;
-    }
-
-    section {
-      max-width: 500px;
-      padding: 2rem;
-    }
-
-    img {
-      max-width: 350px;
-      height: auto;
-    }
-
-    h2 {
-      margin-top: -0.8rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      #container {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  </style>
+  <div id="book">
+    <Book />
+  </div>
 </div>
+
+<style>
+  #container {
+    padding: 2rem;
+  }
+
+  section {
+    width: 500px;
+    height: auto;
+    padding: 2rem;
+    text-align: justify;
+  }
+  #book {
+    margin-top: 6rem;
+    align-self: center;
+  }
+
+  img {
+    width: 430px;
+    min-height: 100%;
+    object-fit: cover;
+  }
+
+  #num,
+  #title {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    margin: 0 2rem 0 1rem;
+    text-align: left;
+  }
+  li {
+    list-style: none;
+    line-height: 1.2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    #container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>

@@ -8,15 +8,13 @@ import bg from "../../assets/bkgrun.png";
   id="hero-container"
   style={`background-image: url(${bg.src}); background-size: cover; background-repeat: no-repeat; background-position: center top;`}
 >
-  <main id="hero-content">
+  <main id="hero-content" class="d-flex">
     <aside id="hero-liens-contact" aria-label="Liens de contact">
       <LiensContact />
     </aside>
 
     <section aria-labelledby="hero-title">
-      <h3 id="hero-title" class="text-color-dark">
-        Accompagnement Running Genève
-      </h3>
+      <p class="eyebrow text-color-peps">Accompagnement Running · Genève</p>
 
       <h1 id="hero-name" class="text-color-peps">
         <span class="text-color-dark">Run</span>
@@ -43,17 +41,26 @@ import bg from "../../assets/bkgrun.png";
 
 <style>
   #hero-container {
-    display: flex;
-    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
     width: 100%;
     height: auto;
   }
 
+  #hero-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+  }
+
   #hero-content {
-    display: flex;
+    position: relative;
+    z-index: 1;
     padding: 6rem;
-    gap: 2rem;
-    align-items: flex-start;
   }
 
   #hero-liens-contact {
@@ -77,7 +84,7 @@ import bg from "../../assets/bkgrun.png";
     flex-direction: column;
     gap: 1rem;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 2rem;
   }
 
