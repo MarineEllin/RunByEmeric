@@ -123,9 +123,6 @@ ul {
   cursor: pointer;
   border: none;
 
-  // ❌ ce hover générique écrase tout
-  // &:hover { background: $peps; color: $light; }
-
   &--outline {
     box-shadow: inset 0 0 0 2px $peps;
     &:hover { background: $peps; color: $light; }
@@ -135,7 +132,6 @@ ul {
     color: $light;
   }
   &--light {
-    padding: 0.6rem 2rem;
     color: $white;
     background: $light;
   }
@@ -150,6 +146,7 @@ ul {
     &--light { color: $light; &:hover { background: $peps; color: $dark; } }
   }
 }
+
 .px12 {
   padding: 0 12rem;
   text-align: center;
