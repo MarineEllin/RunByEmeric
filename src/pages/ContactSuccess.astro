@@ -8,18 +8,27 @@ import Layout from "../layouts/Layout.astro";
   title="Message envoyé – RunByEmeric"
   description="Votre message a bien été envoyé."
 >
-  <Header />
-  <div id="success">
-    <p class="text-color-dark">Merci !</p>
-    <h1 class="text-color-peps">Message bien reçu</h1>
-    <p>Je vous réponds sous 24h. À très vite !</p>
-    <a href="/" class="btn btn--outline">Retour à l'accueil</a>
+  <div id="page">
+    <Header />
+    <div id="success">
+      <p class="italic-eyebrow">Merci !</p>
+      <h1 class="text-color-peps">Message bien reçu</h1>
+      <p>Je vous réponds sous 24h. À très vite !</p>
+      <a href="/" class="btn btn--outline">Retour à l'accueil</a>
+    </div>
+    <Footer />
   </div>
-  <Footer />
 </Layout>
 
 <style>
+  #page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
   #success {
+    flex: 1;
     padding: 6rem;
     display: flex;
     flex-direction: column;
