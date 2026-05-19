@@ -1,14 +1,21 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Message envoyé – RunByEmeric">
+<Layout
+  title="Message envoyé – RunByEmeric"
+  description="Votre message a bien été envoyé."
+>
+  <Header />
   <div id="success">
     <p class="text-color-dark">Merci !</p>
     <h1 class="text-color-peps">Message bien reçu</h1>
     <p>Je vous réponds sous 24h. À très vite !</p>
     <a href="/" class="btn btn--outline">Retour à l'accueil</a>
   </div>
+  <Footer />
 </Layout>
 
 <style>
