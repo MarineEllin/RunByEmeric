@@ -98,8 +98,8 @@ const accompagnements = [
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    gap: 6rem;
-    padding: clamp(2rem, 5vw, 6rem);
+    gap: 2rem;
+    padding: 2rem;
     position: relative;
     z-index: 1;
   }
@@ -109,7 +109,7 @@ const accompagnements = [
     width: 100%;
     position: relative;
     z-index: 1;
-    padding: 0rem 6rem 0rem 3rem;
+    /* padding: 0rem 6rem 0rem 3rem; */
     max-width: 120rem;
     margin: 0 auto;
   }
@@ -197,9 +197,9 @@ const accompagnements = [
   }
 
   /* ── Responsive ── */
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1024px) {
     #hero {
-      padding: 3.5rem 2rem 2.5rem;
+      padding: 1.5rem 0;
     }
 
     #grid {
@@ -208,17 +208,17 @@ const accompagnements = [
 
     .card {
       border-right: none;
-      padding: 2rem 2rem;
+      padding: 1.5rem 0;
     }
   }
 
   @media screen and (max-width: 480px) {
     #hero {
-      padding: 2.5rem 1.25rem 2rem;
+      padding: 0.25rem 0;
     }
 
     .card {
-      padding: 1.75rem 1.25rem;
+      padding: 0.25rem 0;
     }
   }
 </style>

@@ -1,0 +1,191 @@
+---
+
+---
+
+<div id="container">
+  <main id="content" class="d-flex-column">
+    <section aria-labelledby="contact-title" class="d-flex-column gap2">
+      <p class="text-color-dark">Une question ? Un projet ?</p>
+      <h1 id="contact-title" class="text-color-peps">Contactez-moi</h1>
+
+      <div id="form-wrapper">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/contact-success"
+          class="d-flex-column gap2"
+        >
+          <!-- Champ anti-spam honeypot -->
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden">
+            <label>Ne pas remplir : <input name="bot-field" /></label>
+          </p>
+
+          <div class="field d-flex-column">
+            <label for="name">Nom & Prénom</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ex : Jean Dupont"
+              required
+            />
+          </div>
+
+          <div class="field d-flex-column">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ex : jean@email.com"
+              required
+            />
+          </div>
+
+          <div class="field d-flex-column">
+            <label for="phone">Téléphone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Ex : +41 78 000 00 00"
+              required
+            />
+          </div>
+
+          <div class="field d-flex-column">
+            <label for="subject">Sujet</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Choisissez un sujet</option>
+              <option value="debutant">Je débute la course à pied</option>
+              <option value="progression">Je veux progresser</option>
+              <option value="objectif"
+                >Je prépare un objectif (10km, semi, marathon...)</option
+              >
+              <option value="programme">Question sur un programme</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="field d-flex-column">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Parlez-moi de vous, de votre niveau, de vos objectifs..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--big btn--big--peps">
+            Envoyer le message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+
+<style>
+  #content {
+    padding: 6rem;
+  }
+
+  h1 {
+    margin-top: -0.8rem;
+  }
+
+  #form-wrapper {
+    max-width: 640px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background: transparent;
+    transition: border-color 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: currentColor;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  button[type="submit"] {
+    align-self: flex-start;
+    cursor: pointer;
+  }
+
+  /* =========================
+     TABLETTE
+  ========================= */
+  @media screen and (max-width: 1024px) {
+    #content {
+      padding: 3rem;
+    }
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+  @media screen and (max-width: 768px) {
+    #content {
+      padding: 2rem 1.5rem;
+    }
+
+    #form-wrapper {
+      width: 100%;
+    }
+
+    button[type="submit"] {
+      align-self: stretch;
+    }
+  }
+
+  /* =========================
+     PETITS SMARTPHONES
+  ========================= */
+  @media screen and (max-width: 480px) {
+    #content {
+      padding: 1.5rem 1rem;
+    }
+  }
+</style>
