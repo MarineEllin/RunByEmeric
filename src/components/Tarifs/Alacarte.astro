@@ -23,7 +23,7 @@ const tarifs = [
     title: "5 sorties",
     text: "Vise un objectif précis et mets toutes les chances de ton côté sur la durée.",
     price: "329",
-    nb:"5",
+    nb: "5",
   },
 ];
 ---
@@ -35,7 +35,9 @@ const tarifs = [
       aria-labelledby="Alacarte-title"
       class="d-flex-column align-items-center gap2"
     >
-      <h1 id="tarifs-title" class="text-color-peps">Séances privées supplémentaires</h1>
+      <h1 id="tarifs-title" class="text-color-peps">
+        Séances privées supplémentaires
+      </h1>
       <span id="blocs" class="d-flex gap2 text-color-light">
         {
           tarifs.map((item, index) => (
@@ -55,19 +57,19 @@ const tarifs = [
               <hr class="separator" />
               <section>
                 <section>
-                <ul>
-                  <li>Séance à la carte pour 1 à 2 personnes</li>
-                  <li>{item.nb} entraînements privatifs accompagnés</li>
-                  <li>Exercices personnalisé</li>
-                  <li>Supervision et correction des mouvements</li>
-                </ul>
-              </section>
+                  <ul>
+                    <li>Séance à la carte pour 1 à 2 personnes</li>
+                    <li>{item.nb} entraînements privatifs accompagnés</li>
+                    <li>Exercices personnalisé</li>
+                    <li>Supervision et correction des mouvements</li>
+                  </ul>
+                </section>
               </section>
             </article>
           ))
         }
       </span>
-      <Book color = "light" style="margin-top: auto;" />
+      <Book color="light" style="margin-top: auto;" />
     </section>
   </main>
 </div>
@@ -100,19 +102,79 @@ const tarifs = [
     list-style: circle;
   }
 
-  @media screen and (max-width: 1400px) {
-    #blocs {
-      display: flex;
-      flex-direction: column;
+  /* =========================
+     GRAND ECRAN
+  ========================= */
+  @media screen and (max-width: 1440px) {
+    #content {
+      padding: 3rem;
     }
 
-     @media screen and (max-width: 480px) {
-    #blocs {
-      display: flex;
-      flex-direction: column;
+    #article {
+      width: 100%;
+      max-width: 560px;
     }
-     #article {
-      width: 330px;
+
+    #text {
+      height: auto;
+    }
   }
+
+  /* =========================
+     TABLETTE
+  ========================= */
+  @media screen and (max-width: 1024px) {
+    #content {
+      padding: 3rem;
+    }
+
+    #blocs {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #article {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    #text {
+      height: auto;
+    }
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+  @media screen and (max-width: 768px) {
+    #content {
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    #article {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  /* =========================
+     PETITS SMARTPHONES
+  ========================= */
+  @media screen and (max-width: 480px) {
+    #content {
+      padding: 1.5rem 1rem;
+    }
+
+    h1 {
+      font-size: 18px;
+    }
+
+    li {
+      margin: 0 0.5rem;
+    }
   }
 </style>

@@ -7,7 +7,7 @@ import logo from "../assets/logo.svg";
     <!-- Logo & baseline -->
     <section
       id="links"
-      class="d-flex-column bkg-light border-radius-1 m2 p2"
+      class="d-flex-column align-items-center bkg-light border-radius-1 m2 p2"
       aria-label="RunByEmeric"
     >
       <a href="/" aria-label="RunByEmeric - Retour à l'accueil">
@@ -19,14 +19,13 @@ import logo from "../assets/logo.svg";
           loading="lazy"
         />
       </a>
-      <address
-        class="d-flex-column justify-content-center align-items-center"
+      <p
         style="font-style: normal;"
       >
         <p>Ensemble</p>
         <p>Une foulée à la fois</p>
         <p>Toujours vers l'avant</p>
-      </address>
+      </p>
     </section>
 
     <!-- Navigation -->
@@ -57,7 +56,8 @@ import logo from "../assets/logo.svg";
         <p>
           <a
             href="mailto:runbyemeric@gmail.com"
-            aria-label="Envoyer un email à RunByEmeric"
+            aria-label="Envoyer un email à
+          RunByEmeric"
             class="hover-peps"
           >
             runbyemeric@gmail.com
@@ -75,29 +75,133 @@ import logo from "../assets/logo.svg";
       </address>
     </section>
   </div>
+</footer>
 
-  <p
-    style="text-align: center; font-size: 12px; padding: 1rem; opacity: 0.5;"
-    class="text-color-light"
-  >
-    © {new Date().getFullYear()} RunByEmeric · Accompagnement running Genève · Tous
-    droits réservés
-  </p>
+<p
+  style="text-align: center; font-size: 12px; padding: 1rem; opacity: 0.5;"
+  class="text-color-light"
+>
+  © {new Date().getFullYear()} RunByEmeric · Accompagnement running Genève · Tous
+  droits réservés
+</p>
 
-  <style>
+<style>
+  #navigation,
+  #contact {
+    height: 100%;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  /* =========================
+       TABLETTE
+    ========================= */
+  @media screen and (max-width: 1024px) {
+    #container > div {
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1.5rem;
+      justify-content: center;
+    }
+
+    #links {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    #links img {
+      width: 220px;
+      height: auto;
+    }
+
     #navigation,
     #contact {
-      height: 100%;
-      text-align: center;
-    }
-    h2 {
-      margin-bottom: 2rem;
+      flex: 1;
+      min-width: 160px;
+      margin: 0;
+      font-size: 0.95rem;
     }
 
-    @media screen and (max-width: 768px) {
-      #container > div {
-        flex-direction: column;
-      }
+    h2 {
+      margin-bottom: 1rem;
     }
-  </style>
-</footer>
+  }
+
+  /* =========================
+       MOBILE
+    ========================= */
+  @media screen and (max-width: 768px) {
+    #container > div {
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem;
+      gap: 1rem;
+    }
+
+    #links {
+      width: calc(100% - 2rem);
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      padding: 0.75rem;
+    }
+
+    #links img {
+      width: 120px;
+      height: auto;
+    }
+
+    #navigation,
+    #contact {
+      width: 100%;
+      margin: 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.8rem;
+    }
+
+    #contact {
+      border-bottom: none;
+    }
+
+    h2 {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+    }
+  }
+
+  /* =========================
+       PETITS SMARTPHONES
+    ========================= */
+  @media screen and (max-width: 480px) {
+
+    @media screen and (max-width: 768px) {
+    #container > div {
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem;
+
+    }
+    #links {
+      padding: 0.5rem;
+    }
+
+    #links p {
+      font-size: 0.6rem;
+    }
+
+    #links img {
+      width: 90px;
+    }
+
+    #links address p {
+      font-size: 0.9rem;
+    }
+  }
+</style>

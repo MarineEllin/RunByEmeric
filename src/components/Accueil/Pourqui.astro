@@ -4,11 +4,10 @@ import Book from "../Book.astro";
 
 <div id="container">
   <main id="content" class="d-flex-column">
-    <!-- BLOC 1 : Services -->
     <section aria-labelledby="services-title" class="d-flex-column gap2">
       <p class="text-color-dark">Est-ce fait pour vous ?</p>
       <h2 id="services-title" class="text-color-peps">
-        À qui s’adresse l’accompagnement ?
+        À qui s'adresse l'accompagnement ?
       </h2>
       <span class="d-flex-column gap1">
         <p>Vous voulez reprendre la course sans vous blesser ?</p>
@@ -22,15 +21,15 @@ import Book from "../Book.astro";
           rigide ?
         </p>
         <p>
-          Si vous vous reconnaissez dans l’une de ces situations, alors cet
+          Si vous vous reconnaissez dans l'une de ces situations, alors cet
           accompagnement est fait pour vous.
         </p>
         <p>
-          Débutant ou confirmé, l’important n’est pas votre niveau — mais votre
-          envie d’avancer.
+          Débutant ou confirmé, l'important n'est pas votre niveau — mais votre
+          envie d'avancer.
         </p>
       </span>
-      <Book style="margin-top: auto;" />
+      <Book id="book" />
     </section>
   </main>
 </div>
@@ -44,10 +43,38 @@ import Book from "../Book.astro";
     margin-top: -0.8rem;
   }
 
+  /* =========================
+     TABLETTE
+  ========================= */
+  @media screen and (max-width: 1024px) {
+    #content {
+      padding: 3rem;
+    }
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
   @media screen and (max-width: 768px) {
-    #container {
-      display: flex;
-      flex-direction: column;
+    #content {
+      padding: 2rem 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* =========================
+     PETITS SMARTPHONES
+  ========================= */
+  @media screen and (max-width: 480px) {
+    #content {
+      padding: 1.5rem 1rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
     }
   }
 </style>
