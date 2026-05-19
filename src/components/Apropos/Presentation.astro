@@ -86,6 +86,9 @@ import Book from "../Book.astro";
   }
 
   @media screen and (max-width: 768px) {
+    #content {
+      padding: 0.75rem;
+    }
     #row {
       flex-direction: column;
     }
@@ -93,5 +96,12 @@ import Book from "../Book.astro";
     img {
       height: 400px;
     }
+
+    @media screen and (max-width: 480px) {
+    #content {
+      padding: 0.25rem;
+    }
+
+    
   }
 </style>
