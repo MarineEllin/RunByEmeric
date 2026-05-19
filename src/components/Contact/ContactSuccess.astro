@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Message envoyé – RunByEmeric">
+  <div id="success">
+    <p class="text-color-dark">Merci !</p>
+    <h1 class="text-color-peps">Message bien reçu</h1>
+    <p>Je vous réponds sous 24h. À très vite !</p>
+    <a href="/" class="btn btn--outline">Retour à l'accueil</a>
+  </div>
+</Layout>
+
+<style>
+  #success {
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    #success {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
