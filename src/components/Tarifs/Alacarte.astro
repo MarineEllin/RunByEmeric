@@ -8,21 +8,21 @@ const tarifs = [
     duration: "1 mois",
     title: "1 sortie",
     text: "Lance-toi avec un programme structuré et un accompagnement concret dès la première semaine.",
-    price: "69",
+    price: "89",
     nb: "1",
   },
   {
     duration: "2 mois",
     title: "3 sorties",
     text: "Progresse avec un suivi qui s'adapte à toi et à tes résultats.",
-    price: "199",
+    price: "219",
     nb: "3",
   },
   {
     duration: "3 mois",
     title: "5 sorties",
     text: "Vise un objectif précis et mets toutes les chances de ton côté sur la durée.",
-    price: "329",
+    price: "349",
     nb: "5",
   },
 ];
@@ -59,8 +59,12 @@ const tarifs = [
                 <section>
                   <ul>
                     <li>Séance à la carte pour 1 à 2 personnes</li>
-                    <li>{item.nb} entraînements privatifs accompagnés</li>
-                    <li>Exercices personnalisé</li>
+                    <li>
+                      {`${item.nb} entraînement${item.nb > 1 ? "s" : ""} privatif${
+                        item.nb > 1 ? "s" : ""
+                      } accompagné${item.nb > 1 ? "s" : ""}`}
+                    </li>
+                    <li>Exercices personnalisés</li>
                     <li>Supervision et correction des mouvements</li>
                   </ul>
                 </section>
