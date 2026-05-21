@@ -11,9 +11,9 @@ const tarifs = [
     price: "179",
     includes: [
       "Entretien WhatsApp de 30 minutes pour cerner tes objectifs",
-      "Programme running personnalisé d'un mois",
+      "Programme running personnalisé d'un mois via Nolio",
       "1 sortie accompagnée d'1h avec debrief complet",
-      "Suivi WhatsApp régulier, réponse sous 24 à 48h",
+      "Suivi WhatsApp illimité, réponse sous 24 à 48h",
     ],
   },
   {
@@ -23,9 +23,9 @@ const tarifs = [
     price: "259",
     includes: [
       "Entretien WhatsApp de 30 minutes pour cerner tes objectifs",
-      "Programme running personnalisé d'un mois + 1 ajustement selon tes retours",
-      "2 sortie accompagnée d'1h avec debrief complet",
-      "Suivi WhatsApp régulier, réponse sous 24 à 48h",
+      "Programme running personnalisé d'un mois via Nolio + 1 ajustement selon tes retours",
+      "2 sorties accompagnées d'1h avec debrief complet",
+      "Suivi WhatsApp illimité, réponse sous 24 à 48h",
     ],
   },
   {
@@ -35,9 +35,9 @@ const tarifs = [
     price: "329",
     includes: [
       "Entretien WhatsApp de 30 minutes pour cerner tes objectifs",
-      "Programme running personnalisé d'un mois + 2 ajustement selon tes retours",
-      "3 sortie accompagnée d'1h avec debrief complet",
-      "Suivi WhatsApp régulier, réponse sous 24 à 48h",
+      "Programme running personnalisé d'un mois via Nolio + 2 ajustements selon tes retours",
+      "3 sorties accompagnées d'1h avec debrief complet",
+      "Suivi WhatsApp illimité, réponse sous 24 à 48h",
     ],
   },
 ];
@@ -69,7 +69,7 @@ const tarifs = [
               <hr class="separator" />
               <section>
                 {item.includes.map((para) => (
-                  <li class="text-justify">{para}</li>
+                  <li>{para}</li>
                 ))}
               </section>
             </article>
