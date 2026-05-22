@@ -1,5 +1,6 @@
 ---
 import logo from "../assets/logo.svg";
+import LiensContact from "./LiensContact.astro";
 ---
 
 <footer id="container" class="bkg-dark">
@@ -46,7 +47,7 @@ import logo from "../assets/logo.svg";
     <!-- Contact -->
     <section
       id="contact"
-      class="d-flex-column align-items-center m1 text-color-light m2"
+      class="d-flex-column align-items-center text-color-light m2"
       aria-label="Coordonnées"
     >
       <h2>Contact</h2>
@@ -71,13 +72,12 @@ import logo from "../assets/logo.svg";
           </a>
         </p>
       </address>
+      <div id="linksContact">
+        <LiensContact direction="" />
+      </div>
     </section>
   </div>
-  <p
-    id="droits"
-    style="text-align: center; font-size: 12px; padding: 1rem; opacity: 0.5;"
-    class="text-color-light"
-  >
+  <p id="droits" class="text-color-light">
     © {new Date().getFullYear()} RunByEmeric · Accompagnement running Genève · Tous
     droits réservés
   </p>
@@ -94,6 +94,17 @@ import logo from "../assets/logo.svg";
     margin-bottom: 2rem;
   }
 
+  #linksContact {
+    margin-top: 1rem;
+  }
+
+  #droits {
+    text-align: center;
+    font-size: 12px;
+    padding: 1rem;
+    opacity: 0.5;
+  }
+
   /* =========================
        TABLETTE
     ========================= */
@@ -101,7 +112,7 @@ import logo from "../assets/logo.svg";
     #container > div {
       flex-wrap: wrap;
       gap: 1rem;
-      padding: 1.5rem;
+      padding: 3rem;
       justify-content: center;
     }
 
@@ -110,7 +121,6 @@ import logo from "../assets/logo.svg";
       align-items: center;
       text-align: center;
       margin: 0;
-      padding: 1rem;
     }
 
     #links img {
@@ -129,6 +139,13 @@ import logo from "../assets/logo.svg";
     h2 {
       margin-bottom: 1rem;
     }
+
+    #droits {
+      text-align: center;
+      font-size: 10px;
+      padding: 0.5rem;
+      opacity: 0.5;
+    }
   }
 
   /* =========================
@@ -138,16 +155,14 @@ import logo from "../assets/logo.svg";
     #container > div {
       flex-direction: column;
       align-items: center;
-      padding: 1.5rem 1rem;
+      padding: 2rem 2rem 0 2rem;
       gap: 1rem;
     }
 
     #links {
-      width: calc(100% - 2rem);
       align-items: center;
       text-align: center;
       margin: 0;
-      padding: 0.75rem;
     }
 
     #links img {
@@ -172,6 +187,13 @@ import logo from "../assets/logo.svg";
       margin-bottom: 0.75rem;
       font-size: 1rem;
     }
+
+    #droits {
+      text-align: center;
+      font-size: 8px;
+      padding: 0.25rem;
+      opacity: 0.5;
+    }
   }
 
   /* =========================
@@ -181,10 +203,6 @@ import logo from "../assets/logo.svg";
     #container > div {
       flex-direction: column;
       align-items: center;
-      padding: 1.5rem 1rem;
-    }
-    #links {
-      padding: 0.5rem;
     }
 
     #links p {
