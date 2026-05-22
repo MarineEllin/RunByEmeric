@@ -83,6 +83,7 @@ const accompagnements = [
     position: relative;
     width: 100%;
     height: auto;
+    padding: 6rem;
   }
 
   #accompagnement::before {
@@ -198,6 +199,9 @@ const accompagnements = [
 
   /* ── Responsive ── */
   @media screen and (max-width: 1024px) {
+    #accompagnement {
+      padding: 3rem;
+    }
     #hero {
       padding: 1.5rem 0;
     }
@@ -208,17 +212,25 @@ const accompagnements = [
 
     .card {
       border-right: none;
-      padding: 1.5rem 0;
+      padding: 1.5rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    #accompagnement {
+      padding: 2rem;
     }
   }
 
   @media screen and (max-width: 480px) {
+    #accompagnement {
+      padding: 2rem;
+    }
     #hero {
       padding: 0.25rem 0;
     }
 
     .card {
-      padding: 0.25rem 0;
+      padding: 0.25rem;
     }
   }
 </style>

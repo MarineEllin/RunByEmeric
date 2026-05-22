@@ -6,7 +6,7 @@ import Book from "../Book.astro";
 <div id="container">
   <main
     id="content"
-    class="d-flex-column align-items-center justify-content-center gap2"
+    class="d-flex-column align-items-center justify-content-center gap6"
   >
     <section id="row">
       <!-- BLOC 1 : Presentation -->
@@ -85,16 +85,36 @@ import Book from "../Book.astro";
     margin-top: -0.8rem;
   }
 
+  /* =========================
+     TABLETTE
+  ========================= */
+  @media screen and (max-width: 1024px) {
+    #content {
+      gap: 3rem;
+      padding: 3rem;
+    }
+    #row {
+      gap: 3rem;
+    }
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
   @media screen and (max-width: 768px) {
     #content {
-      padding: 2rem 1rem;
+      padding: 2rem;
+      gap: 2rem;
     }
     #row {
       flex-direction: column;
+      gap: 2rem;
     }
+  }
 
-    img {
-      height: 400px;
-    }
+  /* =========================
+     PETITS SMARTPHONES
+  ========================= */
+  @media screen and (max-width: 480px) {
   }
 </style>
