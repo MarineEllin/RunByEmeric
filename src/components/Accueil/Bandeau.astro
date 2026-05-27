@@ -1,0 +1,70 @@
+---
+const keywords = [
+  "Route",
+  "Étirements",
+  "Piste",
+  "Chemin",
+    "Vitesse",
+  "Sentier",
+  "10 km",
+"Récupération",
+  "Trail",
+  "UTMB",
+  "Dénivelé",
+  "Cross",
+  "Foulées",
+  "Chaussures",
+    "Seuil",
+  "Semi",
+  "Marathon",
+   "Fartlek", 
+  "Endurance", 
+  "Fractionné",
+  "Côtes",
+  "Footing",
+  "VMA",
+  "Forêt",
+  "Running",
+];
+---
+
+<div class="ticker-wrapper bkg-peps">
+  <div class="ticker">
+    {
+      [...keywords, ...keywords].map((word) => (
+        <span class="ticker-item">{word}</span>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .ticker-wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+
+  .ticker {
+    display: flex;
+    width: max-content;
+    animation: scroll 85s linear infinite;
+  }
+
+  .ticker-item {
+    white-space: nowrap;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }

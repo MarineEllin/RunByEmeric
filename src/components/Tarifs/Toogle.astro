@@ -1,0 +1,102 @@
+---
+import Programmes from "./Programmes.astro";
+import Seances from "./Seances.astro";
+---
+
+<div id="toggle-container">
+  <div id="toggle-tabs" class="bkg-dark">
+    <button class="tab active" data-target="programmes"
+      >Programmes complets</button
+    >
+    <button class="tab" data-target="seances">Séances privées</button>
+  </div>
+
+  <div id="programmes" class="tab-content active">
+    <Programmes />
+  </div>
+
+  <div id="seances" class="tab-content">
+    <Seances />
+  </div>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      contents.forEach((c) => c.classList.remove("active"));
+
+      tab.classList.add("active");
+      document
+        .getElementById((tab as HTMLElement).dataset.target!)
+        .classList.add("active");
+    });
+  });
+</script>
+
+<style>
+  #toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #toggle-tabs {
+    display: flex;
+    border-radius: 0.9rem;
+    gap: 4px;
+    margin-top: 3rem;
+  }
+
+  .tab {
+    padding: 1rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+
+  .tab.active {
+    background: #c8583a;
+    color: #fff;
+  }
+
+  .tab-content {
+    display: none;
+    width: 100%;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  /* =========================
+     TABLETTE
+  ========================= */
+  @media screen and (max-width: 1024px) {
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+  @media screen and (max-width: 768px) {
+    .tab {
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+    }
+  }
+
+  /* =========================
+     PETITS SMARTPHONES
+  ========================= */
+  @media screen and (max-width: 480px) {
+  }
+</style>

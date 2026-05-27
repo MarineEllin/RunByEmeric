@@ -1,0 +1,72 @@
+---
+const message = "Offre de lancement réservée aux 10 premiers inscrits";
+const items = [
+  message,
+  message,
+  message,
+  message,
+  message,
+  message,
+  message,
+  message,
+  message,
+  message,
+];
+---
+
+<div class="offer-wrapper bkg-peps">
+  <div class="offer-ticker">
+    {items.map((item) => <span class="offer-item">{item}</span>)}
+  </div>
+</div>
+
+<style>
+  .offer-wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+
+  .offer-ticker {
+    display: flex;
+    width: max-content;
+    animation: scroll 50s linear infinite;
+  }
+
+  .offer-item {
+    white-space: nowrap;
+    padding: 0 4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #fff;
+  }
+
+  .offer-item::before {
+    content: "✨";
+    margin-right: 1rem;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .offer-item {
+      font-size: 0.85rem;
+      padding: 0 2rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .offer-item {
+      font-size: 0.75rem;
+      padding: 0 1.5rem;
+    }
+  }
+</style>

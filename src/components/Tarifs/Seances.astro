@@ -9,6 +9,7 @@ const tarifs = [
     title: "1 sortie",
     text: "Lance-toi avec un programme structuré et un accompagnement concret dès la première semaine.",
     price: "89",
+    priceoffer: "69",
     nb: "1",
   },
   {
@@ -16,6 +17,7 @@ const tarifs = [
     title: "3 sorties",
     text: "Progresse avec un suivi qui s'adapte à toi et à tes résultats.",
     price: "219",
+    priceoffer: "179",
     nb: "3",
   },
   {
@@ -23,22 +25,21 @@ const tarifs = [
     title: "5 sorties",
     text: "Vise un objectif précis et mets toutes les chances de ton côté sur la durée.",
     price: "349",
+    priceoffer: "269",
     nb: "5",
   },
 ];
 ---
 
 <div id="container">
-  <main id="content" class="d-flex-column bkg-dark">
+  <main id="content" class="d-flex-column">
     <!-- BLOC 1 : A la carte-->
     <section
       aria-labelledby="Alacarte-title"
       class="d-flex-column align-items-center gap2"
     >
-      <h1 id="tarifs-title" class="text-color-peps">
-        Séances privées supplémentaires
-      </h1>
-      <span id="blocs" class="d-flex gap2 text-color-light">
+      <h1 id="tarifs-title" class="text-color-peps">Séances privées</h1>
+      <span id="blocs" class="d-flex gap2">
         {
           tarifs.map((item, index) => (
             <article id="article" class="d-flex-column bloc gap2">
@@ -50,8 +51,9 @@ const tarifs = [
               </p>
               <h2>{item.title}</h2>
               <p id="text">{item.text}</p>
-              <section class="d-flex gapx">
-                <h2>{item.price}</h2>
+              <section class="d-flex gapx align-items-end">
+                <h2 class="price-original">{item.price}</h2>
+                <h2 class="price-offer">{item.priceoffer}</h2>
                 <p>CHF</p>
               </section>
               <hr class="separator" />
@@ -73,7 +75,7 @@ const tarifs = [
           ))
         }
       </span>
-      <Book color="light" style="margin-top: auto;" />
+      <Book style="margin-top: auto;" />
     </section>
   </main>
 </div>
@@ -99,6 +101,18 @@ const tarifs = [
 
   h2 {
     margin-top: -0.8rem;
+  }
+
+  .price-original {
+    text-decoration: line-through;
+    text-decoration-color: var(--peps);
+    opacity: 0.5;
+    margin-top: 0;
+  }
+
+  .price-offer {
+    color: var(--peps);
+    margin-top: 0;
   }
 
   li {
@@ -152,7 +166,7 @@ const tarifs = [
   ========================= */
   @media screen and (max-width: 768px) {
     #content {
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 2rem;
     }
 
     h1 {
@@ -162,6 +176,7 @@ const tarifs = [
     #article {
       width: 100%;
       max-width: 100%;
+      gap: 1.5rem;
     }
   }
 
@@ -170,11 +185,15 @@ const tarifs = [
   ========================= */
   @media screen and (max-width: 480px) {
     #content {
-      padding: 1.5rem 1rem;
+      padding: 2rem 1.5rem;
     }
 
     h1 {
       font-size: 18px;
+    }
+
+    #article {
+      gap: 1rem;
     }
 
     li {
