@@ -8,8 +8,8 @@ import Book from "../Book.astro";
     id="content"
     class="d-flex-column align-items-center justify-content-center gap6"
   >
-    <section id="row" class="d-flex space-evenly align-items-stretch gap6">
-      <!-- BLOC 1 : Photo -->
+    <!-- BLOC 1 : Photo -->
+    <section id="row" class="d-flex gap6">
       <section
         id="photo"
         aria-label="Photo d'Emeric Pujos, accompagnateur running à Genève"
@@ -21,8 +21,8 @@ import Book from "../Book.astro";
       <!-- BLOC 2 : Presentation -->
       <section id="presentation" aria-labelledby="apropos-title">
         <span class="d-flex-column gap1">
-          <p class="text-color-dark">02 - Et la course à pied ?</p>
-          <h2 id="services-title" class="text-color-peps">Emeric Pujos</h2>
+          <p class="text-color-peps num">02</p>
+          <h2 id="services-title">Et la course à pied ?</h2>
           <p>
             Passionné de course à pied depuis l’âge de 6 ans, j’ai très tôt
             troqué les terrains de football pour les pointes d’athlétisme et les
@@ -73,7 +73,6 @@ import Book from "../Book.astro";
 
   #photo {
     flex: 1;
-    max-width: 900px;
   }
 
   img {
