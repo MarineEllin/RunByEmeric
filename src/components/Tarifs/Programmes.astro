@@ -7,12 +7,12 @@ const tarifs = [
   {
     duration: "1 mois",
     title: "Coup d'envoi",
-    text: "Lance-toi avec un programme structuré et un accompagnement concret dès la première semaine.",
+    text: "Lance-toi avec un accompagnement concret dès la première semaine.",
     price: "189",
     priceoffer: "149",
     includes: [
-      "Entretien WhatsApp de 30 minutes pour cerner tes objectifs",
-      "Programme running personnalisé d'un mois via Nolio",
+      "Permier entretien WhatsApp de 30 minutes",
+      "Programme d'un mois personnalisé via Nolio",
       "1 sortie accompagnée d'1h avec debrief complet",
       "Suivi WhatsApp illimité, réponse sous 24 à 48h",
     ],
@@ -24,9 +24,10 @@ const tarifs = [
     price: "269",
     priceoffer: "215",
     includes: [
-      "Entretien WhatsApp de 30 minutes pour cerner tes objectifs",
-      "Programme running personnalisé d'un mois via Nolio + 1 ajustement selon tes retours",
-      "2 sorties accompagnées d'1h avec debrief complet",
+      "Permier entretien WhatsApp de 30 minutes",
+      "Programme d'un mois personnalisé via Nolio",
+      "Ajustement régulier du programme",
+      "2 sorties accompagnées d'1h avec debrief ",
       "Suivi WhatsApp illimité, réponse sous 24 à 48h",
     ],
   },
@@ -37,9 +38,10 @@ const tarifs = [
     price: "339",
     priceoffer: "269",
     includes: [
-      "Entretien WhatsApp de 30 minutes pour cerner tes objectifs",
-      "Programme running personnalisé d'un mois via Nolio + 2 ajustements selon tes retours",
-      "3 sorties accompagnées d'1h avec debrief complet",
+      "Permier entretien WhatsApp de 30 minutes",
+      "Programme d'un mois personnalisé via Nolio",
+      "Ajustement régulier du programme",
+      "3 sorties accompagnées d'1h avec debrief",
       "Suivi WhatsApp illimité, réponse sous 24 à 48h",
     ],
   },
@@ -56,7 +58,7 @@ const tarifs = [
       <span id="blocs" class="d-flex gap2">
         {
           tarifs.map((item, index) => (
-            <article id="article" class="d-flex-column bloc gap2">
+            <article id="article" class="d-flex-column bloc">
               <p
                 id="duration"
                 class={`px1 border-radius-1 ${background[index]}`}
@@ -68,8 +70,8 @@ const tarifs = [
               <section class="d-flex align-items-end gapx">
                 <section class="d-flex-column">
                   <section class="d-flex gapx align-items-end">
-                    <h2 class="price-original">{item.price}</h2>
-                    <h2 class="price-offer">{item.priceoffer}</h2>
+                    <h3 class="price-original">{item.price}</h3>
+                    <h3 class="price-offer">{item.priceoffer}</h3>
                     <p>CHF</p>
                   </section>
                 </section>
@@ -91,21 +93,22 @@ const tarifs = [
 
 <style>
   #content {
-    padding: 6rem;
+    padding: 3rem;
   }
 
   #article {
-    width: 420px;
+    width: 430px;
+    gap: 1.5rem;
   }
 
   #duration {
-    margin-bottom: 2rem;
-    font-size: 12px;
+    margin-bottom: 1rem;
+    font-size: 14px;
     max-width: fit-content;
   }
 
   #text {
-    height: 80px;
+    height: 60px;
   }
 
   h2 {
@@ -113,6 +116,7 @@ const tarifs = [
   }
 
   .price-original {
+    font-size: 36px;
     text-decoration: line-through;
     text-decoration-color: var(--peps);
     opacity: 0.5;
@@ -120,6 +124,7 @@ const tarifs = [
   }
 
   .price-offer {
+    font-size: 36px;
     color: var(--peps);
     margin-top: 0;
   }

@@ -1,13 +1,10 @@
 ---
-const { direction = "-column", center = "space-evenly" } = Astro.props;
+const { direction = "-column" } = Astro.props;
 ---
 
-<div id="linksContainer" class="d-flex">
-  <main id="linksContent" class="d-flex">
-    <section
-      id="links"
-      class={`d-flex${direction} ${center} text-color-dark gap2`}
-    >
+<div id="linksContainer">
+  <main id="linksContent">
+    <section id="links" class={`d-flex${direction} text-color-dark`}>
       <a
         href="https://www.strava.com/athletes/93065431"
         target="_blank"
@@ -27,11 +24,30 @@ const { direction = "-column", center = "space-evenly" } = Astro.props;
           <i class="fa-brands fa-whatsapp"></i>
         </button>
       </a>
+      <a
+        href="https://www.instagram.com/runbyemeric/"
+        target="_blank"
+        rel="noopener"
+      >
+        <button class="bubble">
+          <i class="fa-brands fa-instagram"></i>
+        </button>
+      </a>
     </section>
   </main>
 </div>
 
 <style>
+  #linksContainer,
+  #linksContent {
+    height: 100%;
+  }
+
+  #links {
+    height: 100%;
+    gap: 3rem;
+  }
+
   i {
     text-align: center;
     font-size: 24px;

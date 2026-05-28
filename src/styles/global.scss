@@ -128,11 +128,10 @@ ul {
   border: none;
   border-radius: 100%;
   padding: 0.8rem;
-  box-shadow: 0 10px 20px $dark, 0 6px 6px $dark;
+  box-shadow: 0px 2px 10px $dark, 0 2px 10px $light;
   cursor: pointer;
   transition: all 0.3s ease;
   letter-spacing: 0.04em;
-
   &:hover {
     background-color: $peps;
     color: $light;
